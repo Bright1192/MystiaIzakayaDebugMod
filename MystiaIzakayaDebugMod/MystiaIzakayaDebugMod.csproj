@@ -87,14 +87,6 @@
       <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\unhollowed\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityExplorer.BIE.IL2CPP">
-      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\plugins\sinai-dev-UnityExplorer\UnityExplorer.BIE.IL2CPP.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UniverseLib.IL2CPP">
-      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\plugins\sinai-dev-UnityExplorer\UniverseLib.IL2CPP.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
