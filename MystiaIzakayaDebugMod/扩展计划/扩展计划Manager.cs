@@ -35,6 +35,7 @@ namespace MystiaIzakayaDebugMod.扩展计划
         public override void Load()
         {
             扩展计划Hook.Init();
+            DebugMono.Init();
         }
 
         public static void Serialize<T>(T o, string ModPath)

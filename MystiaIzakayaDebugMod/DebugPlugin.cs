@@ -8,6 +8,7 @@ using GameData.CoreLanguage.Collections;
 using GameData.Profile;
 using HarmonyLib;
 using Il2CppSystem.Collections.Generic;
+using MystiaIzakayaDebugMod.IL2CPPUnityCall;
 using NightScene.CookingUtility;
 using NightScene.EventUtility;
 using NightScene.GuestManagementUtility;
@@ -65,6 +66,7 @@ namespace MystiaIzakayaDebugMod
             DebugPlugin.debug = base.Config.Bind<bool>("Config", "debug", true, "调试");
             DebugPlugin.skipop = base.Config.Bind<bool>("Config", "skipop", true, "跳过启动游戏时的动画");
             DebugPlugin.quicklyload = base.Config.Bind<bool>("Config", "quicklyload", false, "自动点击主菜单的“继续”");
+            DebugMono.Init();
             #endregion
             try
             {
@@ -77,7 +79,7 @@ namespace MystiaIzakayaDebugMod
                 method = typeof(DebugPlugin).GetMethod("PushToOrder", AccessTools.all);
                 this.Harmony.Patch(typeof(GuestGroupController).GetMethod("PushToOrder", AccessTools.all), new HarmonyMethod(method), null, null, null, null);
                 method = typeof(DebugPlugin).GetMethod("Open", AccessTools.all);
-                this.Harmony.Patch(typeof(ServeModuleUI).GetMethod("Open", AccessTools.all, null, new System.Type[] { typeof(bool), typeof(GuestsManager.OrderBase), typeof(Il2CppSystem.Action), typeof(Il2CppSystem.Action<int>), typeof(bool), typeof(Il2CppSystem.Action<UnityEngine.Sprite>), typeof(Il2CppSystem.Action<UnityEngine.Sprite>), typeof(NightScene.GuestManagementUtility.GuestGroupController) }, null), null, new HarmonyMethod(method), null, null, null);
+                this.Harmony.Patch((MethodBase)typeof(ServeModuleUI).GetMember("Open", AccessTools.all)[0], null, new HarmonyMethod(method), null, null, null);
                 method = typeof(DebugPlugin).GetMethod("LoseAllCombo", AccessTools.all);
                 this.Harmony.Patch(typeof(EventManager).GetMethod("LoseAllCombo", AccessTools.all), new HarmonyMethod(method), null, null, null, null);
                 method = typeof(DebugPlugin).GetMethod("SceneManagerStart", AccessTools.all);

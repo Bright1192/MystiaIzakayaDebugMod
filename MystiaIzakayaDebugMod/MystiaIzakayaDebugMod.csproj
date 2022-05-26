@@ -87,6 +87,10 @@
       <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\unhollowed\UnityEngine.ImageConversionModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\unhollowed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\unhollowed\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
@@ -98,6 +102,7 @@
   <ItemGroup>
     <Compile Include="DebugPlugin.cs" />
     <Compile Include="IL2CPPUnityCall\AssetBundle.cs" />
+    <Compile Include="IL2CPPUnityCall\DebugMono.cs" />
     <Compile Include="IL2CPPUnityCall\ICallManager.cs" />
     <Compile Include="IL2CPPUnityCall\Provider.cs" />
     <Compile Include="IL2CPPUnityCall\TextureHelper.cs" />
