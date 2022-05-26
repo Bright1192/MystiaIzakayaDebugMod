@@ -1,6 +1,8 @@
 ﻿#if Release
 using BepInEx;
 using BepInEx.IL2CPP;
+using Common.UI;
+using DEYU.Utils;
 using GameData.Core.Collections;
 using GameData.CoreLanguage.Collections;
 using HarmonyLib;
@@ -73,6 +75,7 @@ namespace MystiaIzakayaDebugMod.扩展计划
                     if (_continue)
                     {
                         GameData.RunTime.Common.RunTimeStorage.Recipes.Add(菜单和食物.ID);
+                        MonoSingleton<ReceivedObjectDisplayerController>.Instance.NotifyRecipe(菜单和食物.ID);
                     }
                     if (!hasfood || !hassell || !hasrec || !hasdlcmap)
                     {

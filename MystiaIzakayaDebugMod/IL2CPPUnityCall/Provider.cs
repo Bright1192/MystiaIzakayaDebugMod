@@ -3,6 +3,7 @@ using UnhollowerBaseLib;
 using UnhollowerBaseLib.Attributes;
 using UnhollowerRuntimeLib;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
 /*==========================
@@ -20,8 +21,15 @@ namespace MystiaIzakayaDebugMod.IL2CPPUnityCall
         internal delegate void d_GetRootGameObjects(int handle, IntPtr list);
 
         internal delegate int d_GetRootCountpublic(int handle);
+        public static AssetReference SaveScene = new AssetReference("06ba7d38ea131694180b13f2f0b60f43");
+        public static AssetReference MainScene = new AssetReference("11ebc89e124308f41a3763edd2133648");
+        public static AssetReference DayScene = new AssetReference("85111e8d700c3f240879e16b8dda69f1");
 
-
+        public static void DoSave(int addday=0)
+        {
+            GameData.RunTime.Common.RunTimePlayerData.AddDay(addday);
+            SaveScene.LoadScene();
+        }
         public static string LayerToName(int layer)
         {
             d_LayerToName iCall = ICallManager.GetICall<d_LayerToName>("UnityEngine.LayerMask::LayerToName");

@@ -2,6 +2,7 @@
 using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.IL2CPP;
+using Common.UI;
 using DEYU.Utils;
 using GameData.Core.Collections;
 using GameData.Core.Collections.NightSceneUtility;
@@ -68,7 +69,7 @@ namespace MystiaIzakayaDebugMod.扩展计划
                 扩展计划.扩展计划Manager.AddRecipes(mod.modid, mod.菜单和食物list);
             }
         }
-        
+
         public static string DictionaryToString<T, T2>(this Dictionary<T, T2> Dic, System.Func<T, string> func = null, System.Func<T2, string> func2 = null)
         {
             if (Dic.Count == 0)
