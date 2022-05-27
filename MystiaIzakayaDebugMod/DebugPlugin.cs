@@ -71,19 +71,19 @@ namespace MystiaIzakayaDebugMod
             try
             {
                 MethodInfo method = typeof(DebugPlugin).GetMethod("Awake", AccessTools.all);
-                this.Harmony.Patch(typeof(SplashScene.SceneManager).GetMethod("Awake", AccessTools.all), new HarmonyMethod(method), null, null, null, null);
+                this.Harmony.Patch(typeof(SplashScene.SceneManager).GetMethod("Awake", AccessTools.all), new HarmonyMethod(method));
                 method = typeof(DebugPlugin).GetMethod("MainSceneAwake", AccessTools.all);
-                this.Harmony.Patch(typeof(MainScene.SceneManager).GetMethod("Awake", AccessTools.all), null, new HarmonyMethod(method), null, null, null);
+                this.Harmony.Patch(typeof(MainScene.SceneManager).GetMethod("Awake", AccessTools.all), null, new HarmonyMethod(method));
                 method = typeof(DebugPlugin).GetMethod("get_ActiveDLCLabel", AccessTools.all);
-                this.Harmony.Patch(typeof(GameDataProfile).GetMethod("get_ActiveDLCLabel", AccessTools.all), new HarmonyMethod(method), null, null, null, null);
+                this.Harmony.Patch(typeof(GameDataProfile).GetMethod("get_ActiveDLCLabel", AccessTools.all), new HarmonyMethod(method));
                 method = typeof(DebugPlugin).GetMethod("PushToOrder", AccessTools.all);
-                this.Harmony.Patch(typeof(GuestGroupController).GetMethod("PushToOrder", AccessTools.all), new HarmonyMethod(method), null, null, null, null);
+                this.Harmony.Patch(typeof(GuestGroupController).GetMethod("PushToOrder", AccessTools.all), new HarmonyMethod(method));
                 method = typeof(DebugPlugin).GetMethod("Open", AccessTools.all);
-                this.Harmony.Patch((MethodBase)typeof(ServeModuleUI).GetMember("Open", AccessTools.all)[0], null, new HarmonyMethod(method), null, null, null);
+                this.Harmony.Patch((MethodBase)typeof(ServeModuleUI).GetMember("Open", AccessTools.all)[0], null, new HarmonyMethod(method));
                 method = typeof(DebugPlugin).GetMethod("LoseAllCombo", AccessTools.all);
-                this.Harmony.Patch(typeof(EventManager).GetMethod("LoseAllCombo", AccessTools.all), new HarmonyMethod(method), null, null, null, null);
+                this.Harmony.Patch(typeof(EventManager).GetMethod("LoseAllCombo", AccessTools.all), new HarmonyMethod(method));
                 method = typeof(DebugPlugin).GetMethod("SceneManagerStart", AccessTools.all);
-                this.Harmony.Patch(typeof(NightScene.SceneManager).GetMethod("Start", AccessTools.all), null, new HarmonyMethod(method), null, null, null);
+                this.Harmony.Patch(typeof(NightScene.SceneManager).GetMethod("Start", AccessTools.all), null, new HarmonyMethod(method));
             }
             catch
             {
