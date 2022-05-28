@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using UnhollowerBaseLib;
 using UnhollowerBaseLib.Attributes;
 using UnhollowerRuntimeLib;
@@ -24,6 +26,20 @@ namespace MystiaIzakayaDebugMod.IL2CPPUnityCall
         public static AssetReference SaveScene = new AssetReference("06ba7d38ea131694180b13f2f0b60f43");
         public static AssetReference MainScene = new AssetReference("11ebc89e124308f41a3763edd2133648");
         public static AssetReference DayScene = new AssetReference("85111e8d700c3f240879e16b8dda69f1");
+        //重启当前程序，但应当配合延时使用
+        public static void Restart()
+        {
+            string fileName = Process.GetCurrentProcess().MainModule.FileName;
+            string Restarterfile = BepInEx.Paths.PluginPath + "/MystiaIzakayaDebugMod/Restarter.exe";
+            UnityEngine.Debug.LogFormat("重启程序路径{0},Restarter路径{1}", fileName, Restarterfile);
+            Process.Start(new ProcessStartInfo(Restarterfile)
+            {
+                UseShellExecute = true,
+                CreateNoWindow = true,
+                Arguments = $"\"{fileName}\""
+            });
+            UnityEngine.Application.Quit();
+        }
 
         public static void DoSave(int addday=0)
         {
