@@ -57,6 +57,10 @@
       <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\unhollowed\Il2Cppmscorlib.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\unhollowed\Il2CppSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Il2CppSystem.Core">
       <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Touhou Mystia Izakaya\BepInEx\unhollowed\Il2CppSystem.Core.dll</HintPath>
       <Private>False</Private>
